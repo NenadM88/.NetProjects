@@ -1,0 +1,138 @@
+﻿@model MVCFurnitureSalon.Models.Registration
+
+@{
+    ViewBag.Title = "Registration";
+}
+
+<h2>Registration</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserName,"Username", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UserName, new
+           {
+               htmlAttributes = new
+                   {
+                       @class = "form-control",
+                       required = "required",
+                       data_val = "true",
+                       data_val_regex = "Please insert only letters",
+                       data_val_regex_pattern = @"^[a-žA-Ž ]+$",
+                       @minlength = "2",
+                       @maxlength = "25"
+                   }
+           })
+                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Password, new
+           {
+               htmlAttributes = new
+                   {
+                       @class = "form-control",
+                       required = "required",
+                       data_val = "true",
+                       data_val_regex = "Please insert only letters",
+                       data_val_regex_pattern = @"^[a-žA-Ž ]+$",
+                       @minlength = "2",
+                       @maxlength = "25"
+                   }
+           })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LastName,"Last name", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LastName, new
+           {
+               htmlAttributes = new
+                   {
+                       @class = "form-control",
+                       required = "required",
+                       data_val = "true",
+                       data_val_regex = "Please insert only letters",
+                       data_val_regex_pattern = @"^[a-žA-Ž ]+$",
+                       @minlength = "2",
+                       @maxlength = "25"
+                   }
+           })
+                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Role, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Role, new
+           {
+               htmlAttributes = new
+                   {
+                       @class = "form-control",
+                       required = "required",
+                       data_val = "true",
+                       data_val_regex = "Please insert only letters",
+                       data_val_regex_pattern = @"^[a-žA-Ž ]+$",
+                       @minlength = "2",
+                       @maxlength = "25"
+                   }
+           })
+                @Html.ValidationMessageFor(model => model.Role, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Number, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Number, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Number, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new
+           {
+               htmlAttributes = new
+                   {
+                       @class = "form-control",
+                       required = "required",
+                       data_val = "true",
+                       data_val_regex = "Please insert only letters",
+                       data_val_regex_pattern = @"^[a-žA-Ž ]+$",
+                       @minlength = "2",
+                       @maxlength = "40"
+                   }
+           })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-primary btn-width" style="margin-top:10px;">REGISTRATION</button>
+            </div>
+        </div>
+    </div>
+}

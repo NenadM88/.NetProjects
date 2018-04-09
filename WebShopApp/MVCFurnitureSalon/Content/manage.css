@@ -1,0 +1,10 @@
+﻿body {
+}
+
+#img { 
+    background-color: white;
+    max-height: 400px;
+    max-width: 400px;
+    margin: 50px auto;
+    margin-left: 0px;
+}

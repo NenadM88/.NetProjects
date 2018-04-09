@@ -1,0 +1,5 @@
+1,Krevet,siv,Srbija,Vitorog,34500,10,Krevet za spavanje,2013,Babic stil
+2,Dvosed,braon,Svedska,IKEA,40000,5,Dvosed,2013,IKEA
+3,Sto,crni,Srbija,Mihajlovic Line,15000,12,Trpezarijski sto,2015,Mihajlovic Line
+4,Ormar,braon-bela,Srbija,Aleksandro,45000,4,Ormar,2014,Aleksandro
+5,Ogledalo,biserno-crna,Srbija,Aleksandro,13000,16,Ogledalo za spavacu sobu,2017,Aleksandro

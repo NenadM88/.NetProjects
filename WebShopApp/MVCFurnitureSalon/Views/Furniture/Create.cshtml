@@ -1,0 +1,264 @@
+﻿@model MVCFurnitureSalon.Models.FurnitureModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    
+    <div class="form-horizontal">
+        <h4>Furniture</h4>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new
+           {
+               htmlAttributes = new
+                   {
+                       @class = "form-control",
+                       required = "required",
+                       data_val = "true",
+                       data_val_regex = "Please insert only letters",
+                       data_val_regex_pattern = @"^[a-žA-Ž ]+$",
+                       @minlength = "2",
+                       @maxlength = "25"
+                   }
+           })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Colour, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Colour, new
+           {
+               htmlAttributes = new
+                   {
+                       @class = "form-control",
+                       required = "required",
+                       data_val = "true",
+                       data_val_regex = "Please insert only letters",
+                       data_val_regex_pattern = @"^[a-žA-Ž ]+$",
+                       @minlength = "2",
+                       @maxlength = "25"
+                   }
+           })
+                @Html.ValidationMessageFor(model => model.Colour, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OriginCountry,"Origin country", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OriginCountry, new
+           {
+               htmlAttributes = new
+                   {
+                       @class = "form-control",
+                       required = "required",
+                       data_val = "true",
+                       data_val_regex = "Please insert only letters",
+                       data_val_regex_pattern = @"^[a-žA-Ž ]+$",
+                       @minlength = "2",
+                       @maxlength = "25"
+                   }
+           })
+                @Html.ValidationMessageFor(model => model.OriginCountry, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ManufacturerName,"Manufacturer", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ManufacturerName, new
+           {
+               htmlAttributes = new
+                   {
+                       @class = "form-control",
+                       required = "required",
+                       data_val = "true",
+                       data_val_regex = "Please insert only letters",
+                       data_val_regex_pattern = @"^[a-žA-Ž ]+$",
+                       @minlength = "2",
+                       @maxlength = "25"
+                   }
+           })
+                @Html.ValidationMessageFor(model => model.ManufacturerName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Price, new
+           {
+               htmlAttributes = new
+                   {
+                       @class = "form-control",
+                       required = "required",
+                       data_val = "true",
+                       data_val_regex = "Please insert only numbers",
+                       data_val_regex_pattern = @"^[0-9]*$",
+                       @min = "1",
+                       @max = "10000"
+                   }
+           })
+                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Quantity, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Quantity, new
+           {
+               htmlAttributes = new
+                   {
+                       @class = "form-control",
+                       required = "required",
+                       data_val = "true",
+                       data_val_regex = "Please insert only numbers",
+                       data_val_regex_pattern = @"^[0-9]*$",
+                       @min = "1",
+                       @max = "10000"
+                   }
+           })
+                @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Category, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Category, new
+           {
+               htmlAttributes = new
+                   {
+                       @class = "form-control",
+                       required = "required",
+                       data_val = "true",
+                       data_val_regex = "Please insert only letters",
+                       data_val_regex_pattern = @"^[a-žA-Ž ]+$",
+                       @minlength = "2",
+                       @maxlength = "25"
+                   }
+           })
+                @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ProductionYear,"Production year", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ProductionYear, new
+           {
+               htmlAttributes = new
+                   {
+                       @class = "form-control",
+                       required = "required",
+                       data_val = "true",
+                       data_val_regex = "Please insert only numbers",
+                       data_val_regex_pattern = @"^[0-9]*$",
+                       @min = "1",
+                       @max = "10000"
+                   }
+           })
+                @Html.ValidationMessageFor(model => model.ProductionYear, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SalonName,"Salon name", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SalonName, new
+           {
+               htmlAttributes = new
+                   {
+                       @class = "form-control",
+                       required = "required",
+                       data_val = "true",
+                       data_val_regex = "Please insert only letters",
+                       data_val_regex_pattern = @"^[a-žA-Ž ]+$",
+                       @minlength = "2",
+                       @maxlength = "25"
+                   }
+           })
+                @Html.ValidationMessageFor(model => model.SalonName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Picture, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Picture, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Picture, "", new { @class = "text-danger" })
+                <img id="img" type="image" />
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input id="File1" onchange="SetImage()" type="file" class="btn btn-default" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+}
+<link href="../../Content/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" />
+<script src="../../Scripts/jquery-1.10.2.js"></script>
+<script src="../../Scripts/jquery-ui-1.10.4.custom.min.js"></script>
+<script src="~/Scripts/ImportPicture.js"></script>
+<link href="~/Content/manage.css" rel="stylesheet" />
+<!--CommentBox-->
+<div class="fb-comments"></div>
+<div id="fb-root"></div>
+<script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+<!--LIKE-->
+<div class="fb-like"></div>
+<div id="fb-root"></div>
+<script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+<!--SEND-->
+<div class="fb-send"></div>
+<div id="fb-root"></div>
+<script>
+(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11';
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+

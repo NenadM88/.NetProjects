@@ -1,0 +1,3 @@
+krevet, dimenzije 200x200 od hrastovine, 
+trosed, dimenzije 260x70x70 od bukve,
+fotelja, dimenzije 90x90x90 od iverice,

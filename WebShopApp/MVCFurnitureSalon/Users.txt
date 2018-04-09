@@ -1,0 +1,7 @@
+pera11,1234,Petar,Petrovic,Admin,063587898,petrovic.pera@gmail.com
+nenad13,3245,Nenad,Nenadovic,User,065125589,nenadovic.nenad@gmail.com
+aca55,0000,Aleksandar,Aleksic,Admin,064878252,aleksic.aleksandar@gmail.com
+marko14,1111,Marko,Markovic,User,061552545,markovic.marko@gmail.com
+ilija67,4040,Ilija,Ilijevic,User,064578578,ilijevic.ilija@gmail.com
+milica44,1122,Milica,Milicevic,Kupac,064515515,milicevic.milica@gmail.com
+aca1,zrenjanin,Aleksandar,Bugaric,Kupac,067585930,bugaric.aleksandar@gmail.com

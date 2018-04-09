@@ -1,0 +1,168 @@
+﻿@model IEnumerable<MVCFurnitureSalon.Models.FurnitureModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+@if (Request.IsAuthenticated)
+{
+    if (@User.IsInRole("Admin"))
+    {
+        <img src="~/Images/Admin1.ico" style="width:100px; height:100px;">
+        <h3>ADMIN</h3>
+        <p>
+            <a href='@Url.Action("Create", "Furniture")'>
+                <span class="glyphicon glyphicon-plus-sign"></span>Add New
+            </a>
+        </p>
+        <div style="float:right">
+            <a href='@Url.Action("OpenCart", "Furniture")'>
+                <span class="glyphicon glyphicon-eye-open"></span>Open Cart
+            </a>
+        </div>
+    }
+    else if (@User.IsInRole("User"))
+    {
+        <h3>USER</h3>
+        <div style="float:right">
+            <a href='@Url.Action("OpenCart", "Furniture")'>
+                <span class="glyphicon glyphicon-eye-open"></span>Open Cart
+            </a>
+        </div>
+    }
+}
+<p>
+    @using (Html.BeginForm("Index", "Furniture", FormMethod.Get))
+    {
+        <div>
+            <b>Search:</b>
+            @Html.RadioButton("searchBy", "Name", true) <text>Name</text>
+            @Html.RadioButton("searchBy", "Colour") <text>Colour</text>
+            @Html.RadioButton("searchBy", "OriginCountry") <text>Origin Country</text>
+            @Html.RadioButton("searchBy", "ManufacturerName") <text>Manufacturer</text>
+            @Html.RadioButton("searchBy", "Price") <text>Price</text>
+            @Html.RadioButton("searchBy", "Quantity") <text>Quantity</text>
+            @Html.RadioButton("searchBy", "Category") <text>Category</text>
+            @Html.RadioButton("searchBy", "ProductionYear") <text>Production year</text>
+            @Html.RadioButton("searchBy", "SalonName") <text>Salon</text>
+            <br />
+        </div>
+        <div class="col-md-3" style="padding:0px;">
+            @Html.Editor("search", new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+        <input type="Submit" value="Search" class="btn btn-primary" />
+    }
+</p>
+<table class="table table-bordered table-striped" style="background-color:lightgray">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Colour)
+        </th>
+        <th>
+            @Html.DisplayName("Origin country")
+        </th>
+        <th>
+            @Html.DisplayName("Manufacturer")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayName("Production year")
+        </th>
+        <th>
+            @Html.DisplayName("Salon")
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.Picture)
+            </th>*@
+        <th></th>
+    </tr>
+    @if (Model.Count() == 0)
+    {
+        <tr>
+            <td colspan="9">There is no match regarding to search criteria</td>
+        </tr>
+    }
+    else
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Colour)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OriginCountry)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ManufacturerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductionYear)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SalonName)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Picture)
+                    </td>*@
+                @if (Request.IsAuthenticated)
+                {
+                    if (@User.IsInRole("Admin"))
+                    {
+                        <td>
+                            <a href='@Url.Action("Edit", "Furniture", new { id = item.ID })'>
+                                <span class="glyphicon glyphicon-pencil"></span>
+                            </a>
+                            <a href='@Url.Action("Details", "Furniture", new { id = item.ID })'>
+                                |
+                                <span class="glyphicon glyphicon-info-sign"></span>
+                            </a>
+                            <a href='@Url.Action("Delete", "Furniture", new { id = item.ID })'>
+                                |
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </a>
+                            <a href='@Url.Action("AddToCart", "Furniture", new { id = item.ID })'>
+                                |
+                                <span class="glyphicon glyphicon-shopping-cart"></span>
+                            </a>
+                        </td>
+                    }
+                    else if (@User.IsInRole("User"))
+                    {
+                        <td>
+                            <a href='@Url.Action("Details", "Furniture", new { id = item.ID })'>
+                                <span class="glyphicon glyphicon-info-sign"></span>
+                            </a>
+                            <a href='@Url.Action("AddToCart", "Furniture", new { id = item.ID })'>
+                                |
+                                <span class="glyphicon glyphicon-shopping-cart"></span>
+                            </a>
+                        </td>
+                    }
+                }
+            </tr>
+        }
+    }
+</table>
